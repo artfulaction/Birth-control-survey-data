@@ -62,30 +62,6 @@ patients_cols <- patients %>% rename(Age=How.old.are.you.) %>%
 #(selected these two since some people made a response but didn't fill out their age or gender)
 patients_cols <- filter(patients_cols, DiscussWithDoctor != "" & FirstThoughtBC != "") 
 
-##### This was an attempt to see the difference between Concerns and Concerns1
-patient_cols_concerns <- patients_cols %>% 
-select (ResponseID, Concerns, Concerns1)
-  
-#####################
-#There are two WhyInterested, DidUHaveChoice, OptionChoice columns. 
-#This happened because people who answered "no" to discussing it with their doctor got these questions in a slightly different format. Here we are going to merge them into the other column?
-# Was tryna get this to work but it looks like it's not :(
-
-
-#patients_cols_combine[patients_cols==""] <- NA
-#patients_cols_combined <- patients_cols(WhyInterested = coalesce(!!! DF), WhyInterested1 = coalesce(!!! rev(DF)))
-
-#patients_cols$WhyInterested = case_when(patients_cols$WhyInterested == " " ~ NA)
-
-#patients_cols_combined <- patients_cols %>% 
- # mutate(WhyInterested2 = case_when(
-  #  WhyInterested1 == "" ~ NA)) %>%
-  #mutate(WhyInterested2 = gsub(WhyInterested, WhyInterested1)) %>%
-  #mutate(WhyInterested3 = coalesce(WhyInterested, WhyInterested2)) %>%
-  #select (WhyInterested, WhyInterested1, WhyInterested2)
-  
-######################
-
 # let's make a dataframe (contact_list or contact_list_cols) where it's only people who gave us their email to contact them
 contact_list <- filter(patients, E.mail. != "")
 contact_list_cols <- filter(patients_cols, Email != "")
@@ -124,6 +100,7 @@ answersbyConcerns <- patients_cols %>%
 
 ###### Filtering the answers to which birth control option they choose #######
 #this is how you deal with user-entered data that should have been a multiple-choice question instead!!!!!!
+#this was definitely the hardest one. All the others are multiple choice.
 
 #setting up the array for filtering the BC options in answersbyChoice. this sets up for my tidyverse magnum opus.
 filter_actual_choices <- c("birth control pills", "IUD", "withdrawal","nuvaring","fertility awareness", "patch", "cervical cap", "implant", "spermicide", "condoms")
@@ -156,7 +133,7 @@ answersbyChoice <- patients_cols %>%
   filter(OptionChoice %in% filter_actual_choices) %>% #filter out the errors that the str_splits introduced
   arrange(desc(total))
 
-#this was definitely the hardest one. All the others are multiple choice.
+
 ##########
 
 
