@@ -1,7 +1,9 @@
 # Processing and visualizing birth control survey data
 This is my code (written in R) to process, clean, analyze, and graph data from a survey on birth control methods. 
 
-The survey contained multiple choice and user-centered responses that required cleaning before creating graphs. 
+The survey contained multiple choice and user-entered responses that required cleaning to elimate typed variations.
+
+Once the data are cleaned and processed, graphs are created and new, cleaned data is exported.
 
 The data processing includes:
 * filtering out null responses
