@@ -1,7 +1,7 @@
-# Birth-control-survey-data
-This is my code (written in R) to process data from a survey on birth control methods. 
+# Processing and visualizing birth control survey data
+This is my code (written in R) to process, clean, analyze, and graph data from a survey on birth control methods. 
 
-The survey contained multiple choice and user-centered responses. 
+The survey contained multiple choice and user-centered responses that required cleaning before creating graphs. 
 
 The data processing includes:
 * filtering out null responses
@@ -11,4 +11,4 @@ The data processing includes:
 * counting total answers for various multiple-choice questions
 * standardizing the user-entered question to discrete categories and counting total answers
 * graphing the answer counts to each question
-* saving the graphs and dataframes created 
+* exporting the graphs and dataframes created 
