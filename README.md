@@ -15,6 +15,4 @@ The data processing includes:
 * graphing the answer counts to each question
 * exporting the graphs and dataframes created 
 
-I made a quick visualization mapping out the survey data in Tableau. The latitude and longitude of each survey respondent was generated with the above R script. The tooltips display the respondent's age, city, and birth control method. Take a look here:
-
-https://public.tableau.com/profile/princess7577#!/vizhome/BCsurveyresponsesacrossthenation/Sheet1
+I made a quick visualization mapping out the survey data in Tableau. The latitude and longitude of each survey respondent was generated with the above R script. Each point represents one survey respondent, color-coded by the age at which they first thought about using birth control.  The tooltips display the respondent's current age, city, and birth control method. Take a look here: https://public.tableau.com/profile/princess7577#!/vizhome/BCsurveyresponsesacrossthenation/Sheet1
