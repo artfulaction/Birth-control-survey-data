@@ -1,5 +1,5 @@
 # Processing and visualizing birth control survey data
-This is my code (written in R) to process, clean, analyze, and graph data from a survey on birth control methods. 
+[This is my code (written in R) to process, clean, analyze, and graph data from a survey on birth control methods.](https://github.com/artfulaction/Birth-control-survey-data/blob/master/BC_patients.R)
 
 The survey contained multiple choice and user-entered responses that required cleaning to elimate typed variations.
 
